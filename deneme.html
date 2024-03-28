@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Veri Çekme</title>
+</head>
+<body>
+
+    <h1>Ürün Detayları</h1>
+    
+    <label for="productIdInput">Ürün ID:</label>
+    <input type="text" id="productIdInput" placeholder="Ürün ID girin">
+    <button onclick="getProductDetails()">Detayları Getir</button>
+
+    <ul id="productDetailsList"></ul>
+	
+	<button onclick="getAllProducts()">Bütün Ürünleri Getir</button>
+	<ul id="allProductList"></ul>
+	
+	<input type="text" id="minPrice" placeholder="minPrice">
+	<input type="text" id="maxPrice" placeholder="maxPrice">
+	<button onclick="getAllProductsForPrice()">Fiyata Göre Ürünleri Getir</button>
+	
+	<ul id="allProductListForPrice"></ul>
+	
+
+    <script>
+        function getProductDetails() {
+            // Input'tan ürün ID'sini al
+            var productId = document.getElementById("productIdInput").value;
+
+            // API'den veri çek
+            fetch(`https://localhost:7213/api/Products/${productId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Veriyi listele
+                    var productDetailsList = document.getElementById("productDetailsList");
+                    productDetailsList.innerHTML = `
+                        <li><strong>Ürün ID:</strong> ${data.productId}</li>
+                        <li><strong>Ürün Adı:</strong> ${data.productName}</li>
+                        <li><strong>Fiyat:</strong> ${data.price} TL</li>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Hata:', error);
+                    alert('Ürün detayları alınamadı. Lütfen geçerli bir Ürün ID girin.');
+                });
+        }
+		
+		
+		function getAllProducts() {
+
+            // API'den veri çek
+            fetch(`https://localhost:7213/api/Products/urunlerigetir`)
+                .then(response => response.json())
+                .then(data => {
+                    // Veriyi listele
+                   
+					
+					    var ulElement = document.getElementById("allProductList");
+
+						data.forEach(function(product) {
+							var liElement = document.createElement("li");
+							liElement.textContent = "Product ID: " + product.productId + ", Product Name: " + product.productName + ", Price: " + product.price;
+							ulElement.appendChild(liElement);
+						});
+                })
+                .catch(error => {
+                    console.error('Hata:', error);
+                    alert('Ürün detayları alınamadı. Lütfen geçerli bir Ürün ID girin.');
+                });
+        }
+		
+		
+			function getAllProductsForPrice() {
+			
+			var minPrice = document.getElementById("minPrice").value;
+			var maxPrice = document.getElementById("maxPrice").value;
+
+            // API'den veri çek
+		
+			
+            fetch(`https://localhost:7213/api/Products/fiyatagoregetir/`+ minPrice+'/'+ maxPrice,{method: 'POST'})
+                .then(response => response.json())
+                .then(data => {
+                    // Veriyi listele
+                   
+					
+					    var ulElement = document.getElementById("allProductListForPrice");
+
+						data.forEach(function(product) {
+							var liElement = document.createElement("li");
+							liElement.textContent = "Product ID: " + product.productId + ", Product Name: " + product.productName + ", Price: " + product.price;
+							ulElement.appendChild(liElement);
+						});
+                })
+                .catch(error => {
+                    console.error('Hata:', error);
+                    alert('Ürün detayları alınamadı. Lütfen geçerli bir Ürün ID girin.');
+                });
+        }
+    </script>
+
+</body>
+</html>

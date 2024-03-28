@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|c:\\users\\dell\\onedrive\\masa\u00FCst\u00FC\\identity_v3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|c:\\users\\dell\\onedrive\\masa\u00FCst\u00FC\\identity_v3\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|c:\\users\\dell\\onedrive\\masa\u00FCst\u00FC\\identity_v3\\views\\account\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|solutionrelative:views\\account\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|c:\\users\\dell\\onedrive\\masa\u00FCst\u00FC\\identity_v3\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|c:\\users\\dell\\onedrive\\masa\u00FCst\u00FC\\identity_v3\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|c:\\users\\dell\\onedrive\\masa\u00FCst\u00FC\\identity_v3\\viewmodels\\createviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877087AE-DECA-499B-B852-51B3364A5A59}|IDENTITY_V2.csproj|solutionrelative:viewmodels\\createviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-25T07:12:04.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\ViewModels\\CreateViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\CreateViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\ViewModels\\CreateViewModel.cs",
+              "RelativeToolTip": "ViewModels\\CreateViewModel.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA1wBcAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-24T11:36:11.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAABkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-24T11:31:58.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAASwFUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-24T11:25:02.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-24T10:37:52.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Views\\Account\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Masa\u00FCst\u00FC\\IDENTITY_V3\\Views\\Account\\Create.cshtml",
+              "RelativeToolTip": "Views\\Account\\Create.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-24T10:36:07.955Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

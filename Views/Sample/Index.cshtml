@@ -1,0 +1,47 @@
+﻿@model AppRole
+
+<h2>
+    Kullanıcı Rol Ekle
+</h2>
+
+<form>
+    <div asp-validation-summary="All" class="text-danger"></div> 
+
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control"> 
+    </div>
+
+    <button type="submit" class="btn btn-primary" onclick="sendCreate()">Yeni Rolü Kaydet</button>
+</form>
+
+<script>
+    function sendCreate() {
+        debugger;
+        // URL'den userId ve code bilgilerini al
+        var urlParams = new URLSearchParams(window.location.search);
+        var userId = urlParams.get('UserId');
+        var code = urlParams.get('Code');
+
+        // Kullanıcıdan ad bilgisini al
+        var name = document.getElementById('Name').value;
+
+        // HTTP GET isteği oluştur
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/Sample/Create?UserId=' + userId + '&Code=' + code + '&Name=' + name, true);
+
+        // İsteği gönder
+        xhr.send();
+
+        // İsteğin tamamlanması durumunda yapılacak işlemler (isteği istediğiniz şekilde özelleştirebilirsiniz)
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                // Başarılı cevap
+                console.log('İsteğiniz başarıyla tamamlandı');
+            } else {
+                // Hata durumu
+                console.error('İstek sırasında bir hata oluştu');
+            }
+        };
+    }
+</script>

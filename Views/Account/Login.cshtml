@@ -1,0 +1,57 @@
+@model LoginViewModel
+
+<h2>
+    Login User
+</h2>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+<div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control">
+    </div>
+
+    <div class="form-check">
+        <input asp-for="RememberMe" class="form-check-input">
+        <label asp-for="RememberMe" class="form-check-label">Beni Hatırla</label>
+    </div>
+    <button type="submit" onclick="submitForm()" class="btn btn-primary">Login</button>
+    <div class="g-recaptcha" data-sitekey=6LeWCn8pAAAAACY9kHzcqlTfsMHcwhz2U7i9Hx2l></div>
+</div>
+
+
+
+<script>
+    function submitForm() {
+        const reCaptchaResponse = grecaptcha.getResponse();
+
+        debugger;
+        var model = {
+            Email: $('#Email').val(),
+            Password: $('#Password').val(),
+            RememberMe: $('#RememberMe').prop('checked'),
+            ReCaptchaResponse: reCaptchaResponse,
+        };
+
+        $.ajax({
+            url: '/Account/Login',
+            type: 'POST',
+            data: model,
+            success: function (data) {
+                // Başarılı yanıt alındığında yapılacak işlemler
+                console.log(data);
+                window.location.href = '/Home/Index';
+            },
+            error: function (error) {
+                debugger;
+                alert(error.responseText)
+            }
+        });
+    }
+</script>

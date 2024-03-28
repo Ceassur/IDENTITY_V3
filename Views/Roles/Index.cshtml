@@ -1,0 +1,179 @@
+﻿@{
+    ViewData["Title"] = "Rol Sayfası";
+}
+
+@model IEnumerable<AppRole>
+
+    <a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Create">Rol Yarat</a>
+<style>
+        .table-container {
+            margin: auto; /* Center the container horizontally */
+            width: 80%; /* Adjust the width as needed */
+            overflow-x: auto; /* Add horizontal scrollbar if the table is too wide */
+        }
+    
+        table {
+            border-collapse: collapse;
+            width: 100%; /* Make the table fill the container */
+            margin-bottom: 20px; /* Add margin for spacing */
+        }
+    
+        th, td {
+            border: 1px solid black; /* Add border to cells */
+            padding: 8px; /* Add padding for better appearance */
+            text-align: left; /* Adjust text alignment if needed */
+        }
+    
+        .btn {
+            text-decoration: none; /* Remove underlines from buttons */
+            margin-right: 5px; /* Add margin to separate buttons */
+        }
+    </style>
+    
+    <div class="mb-3">
+        <label>Name:</label>
+        <input id="searchtext" class="form-control"> 
+    </div>    
+        <div class="mb-3">
+        <label>Id    :</label>
+        <input id="Id" class="form-control"> 
+    </div> 
+    <div class="mb-3">
+        @* <button onclick="searchRolesFromFilter()">Arama Yap</button> *@
+        @* <button onclick="searchRoles(true)">Arama Yap</button> *@
+        <button onclick="searchRoles(1)">Arama Yap</button>
+    </div>
+
+<div class="table-container">
+    <table id="roleTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model){
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+     
+     <button onclick="changePrevPageNum()" id="preview">Preview Page</button>
+
+    <select name="rowcount" id="rowcount" onchange="onChgRowCount()">
+        <option value="5">Kayıt Sayısı : 5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+    </select>
+
+    <button onclick="changeNextPageNum()" id="next" style="float: right;">Next Page</button>
+      </div>
+
+</div>
+                     
+
+
+<script>
+
+  debugger;
+  var urlParams = new URLSearchParams(window.location.search);
+  var pagenum;
+  var rowcount;
+  var searchtextFromUrl;
+
+    pagenum = parseInt(urlParams.get('pagenum'));
+    if(!pagenum>0){
+        pagenum = 1;
+        var previewBtn = document.getElementById("preview")
+        previewBtn.style = "display:none";
+    }    
+
+    rowcount = parseInt(urlParams.get('rowcount'));
+    if(!rowcount>0){
+        rowcount = 5;
+    }   
+
+    searchtextFromUrl = urlParams.get('searchtext');
+    if(searchtextFromUrl>""){
+        document.getElementById("searchtext").value = searchtextFromUrl;
+    }  
+
+    idFromUrl = urlParams.get('Id');
+    if(idFromUrl>""){
+        document.getElementById("Id").value = idFromUrl;
+    } 
+
+    document.getElementById("rowcount").value = rowcount;
+  
+    function onChgRowCount() {
+        pagenum = 1;
+        searchRoles(pagenum)
+    }
+
+   function changePrevPageNum(){
+      pagenum = pagenum -1;
+
+      if(pagenum<1)
+      pagenum = 1;
+
+      searchRoles(pagenum);
+   }
+   function changeNextPageNum(){
+        pagenum = pagenum +1;
+        searchRoles(pagenum);
+   }
+
+
+function searchRoles(pagenumParam){
+    rowcount = document.getElementById("rowcount").value;
+    var searchtext = document.getElementById("searchtext").value;
+    var Id = document.getElementById("Id").value;
+
+    window.location.href = '/Roles/Index?searchtext='+searchtext
+    +"&Id="+Id 
+    +"&pagenum="+pagenumParam
+    +"&rowcount="+rowcount;
+   }
+
+ //2. Solution
+ /*
+function searchRoles(flag){
+    debugger;
+
+    rowcount = document.getElementById("rowcount").value;
+
+    var searchtext = document.getElementById("searchtext").value;
+    var Id = document.getElementById("Id").value;
+
+     if(flag){
+        pagenum=1;
+     }   
+
+    window.location.href = '/Roles/Index?searchtext='+searchtext
+    +"&Id="+Id 
+    +"&pagenum="+pagenum
+    +"&rowcount="+rowcount;
+   }
+*/
+   //1. Solution
+  /* function searchRolesFromFilter(){
+    debugger;
+
+    rowcount = document.getElementById("rowcount").value;
+
+    var searchtext = document.getElementById("searchtext").value;
+    var Id = document.getElementById("Id").value;
+     
+    window.location.href = '/Roles/Index?searchtext='+searchtext
+    +"&Id="+Id 
+    +"&pagenum="+1
+    +"&rowcount="+rowcount;
+   }*/
+</script>  

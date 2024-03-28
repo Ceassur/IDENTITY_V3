@@ -1,0 +1,59 @@
+  <label for="il">İl:</label>
+  <input type="text" id="il">
+
+  <label for="ilce">İlçe:</label>
+  <input type="text" id="ilce">
+
+  <button onclick="fetchEczaneData()">Eczane Bilgilerini Getir</button>
+
+  <div id="eczaneListesi"></div>
+
+
+<script>
+  function fetchEczaneData() {
+   
+    var il = document.getElementById('il').value;
+    var ilce = document.getElementById('ilce').value;
+
+    $.ajax({
+      type: "GET",
+      url: "https://api.collectapi.com/health/dutyPharmacy",
+      data: {
+        il: il,
+        ilce: ilce
+      },
+      headers: {
+        'Authorization': 'apikey 6HjxyQMNhCTfh1hRMUbAfL:6ihzJ4yATMQLqBqwyHFsj7',
+        'Content-Type': 'application/json'
+      },
+      success: function (data) {
+        // Başarılı istek durumu
+        displayEczaneData(data.result);
+      },
+      error: function (xhr, status, error) {
+        // Hata durumu
+        console.error('API isteği başarısız. Hata:', error);
+      }
+    });
+  }
+
+  function displayEczaneData(eczaneData) {
+    // Eczane listesini ekrana eklemek için bir döngü
+    var eczaneListesiHtml = '';
+    for (var i = 0; i < eczaneData.length; i++) {
+      var eczane = eczaneData[i];
+      eczaneListesiHtml += `
+        <div>
+          <strong>${eczane.name}</strong><br>
+          İlçe: ${eczane.dist}<br>
+          Adres: ${eczane.address}<br>
+          Telefon: ${eczane.phone}<br>
+          <hr>
+        </div>
+      `;
+    }
+
+    // Eczane listesini gösterilen div'e ekleme
+    document.getElementById('eczaneListesi').innerHTML = eczaneListesiHtml;
+  }
+</script>

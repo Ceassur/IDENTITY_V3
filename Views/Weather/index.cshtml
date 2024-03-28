@@ -1,0 +1,56 @@
+  <label for="il">İl:</label>
+  <input type="text" id="city">
+
+  <button onclick="fetchWeatherData()">Weather Bilgilerini Getir</button>
+
+  <div id="weathereListesi"></div>
+
+
+<script>
+  function fetchWeatherData() {
+   
+    var city = document.getElementById('city').value;
+
+    $.ajax({
+      type: "GET",
+      url: "https://api.collectapi.com/weather/getWeather",
+      data: {
+        data: {
+            lang: "tr",
+            city: city
+            }
+      },
+      headers: {
+        'Authorization': 'apikey 6HjxyQMNhCTfh1hRMUbAfL:6ihzJ4yATMQLqBqwyHFsj7',
+        'Content-Type': 'application/json'
+      },
+      success: function (data) {
+        // Başarılı istek durumu
+        displayWeatherData(data.result);
+      },
+      error: function (xhr, status, error) {
+        // Hata durumu
+        console.error('API isteği başarısız. Hata:', error);
+      }
+    });
+  }
+
+  function displayWeatherData(weatherData) {
+    // Eczane listesini ekrana eklemek için bir döngü
+    var weatherListesiHtml = '';
+    for (var i = 0; i < weatherData.length; i++) {
+      var weather = weatherData[i];
+      weatherListesiHtml += `
+        <div>
+          <strong>${weather.day}</strong><br>
+          İlçe: ${weather.description}<br>
+          Adres: ${weather.status}<br>
+          <hr>
+        </div>
+      `;
+    }
+
+    // Eczane listesini gösterilen div'e ekleme
+    document.getElementById('weathereListesi').innerHTML = weatherListesiHtml;
+  }
+</script>
